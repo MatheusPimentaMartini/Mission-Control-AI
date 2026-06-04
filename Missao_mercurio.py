@@ -192,18 +192,6 @@ def classificar_ciclo(dados_missao):
     return pontuacoes
         
 pontuacoes = classificar_ciclo(dados_missao)
-   
-
-#Analisar as tendencias
-
-def analisar_tendencia(pontuacoes):
-    if pontuacoes[0] < pontuacoes [-1]:
-        return("A missão demonstrou uma evolução negativa.")
-    elif pontuacoes[-1] < pontuacoes[0]:
-        return("A missão demonstrou uma evolução positiva.")
-    elif pontuacoes[0] == pontuacoes[-1]:
-        return("Não foram observadas alterações significativas em relação ao início da missão")
-tendencia = analisar_tendencia(pontuacoes)
 
 #identificar a area mais afetada
 
@@ -248,6 +236,17 @@ def gerar_recomendacao(temperatura,comunicacao,bateria,oxigenio,estabilidade,):
         recomendacao = "Condições estáveis. Continuar o monitoramento."
     return recomendacao
 recomendacao = gerar_recomendacao(temperatura,comunicacao,bateria,oxigenio,estabilidade)
+
+#Analisar as tendencias
+
+def analisar_tendencia(pontuacoes):
+    if pontuacoes[0] < pontuacoes [-1]:
+        return("A missão demonstrou uma evolução negativa.")
+    elif pontuacoes[-1] < pontuacoes[0]:
+        return("A missão demonstrou uma evolução positiva.")
+    elif pontuacoes[0] == pontuacoes[-1]:
+        return("Não foram observadas alterações significativas em relação ao início da missão")
+tendencia = analisar_tendencia(pontuacoes)
 
 #Calculo de medias
 
